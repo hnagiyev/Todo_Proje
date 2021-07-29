@@ -1,0 +1,42 @@
+{% extends 'todo_app/base.html' %}
+
+{% block title %}Ya Allah{% endblock title %}
+
+{% block jumbotron %}
+<div class="text-center">
+        <h1 class="display-5 fw-bold">Ya Allah</h1>
+        <p class="lead"><center>BismiAllah</center></p>
+      <a class="btn btn-outline-success" href="{% url 'create' %}" role="button">Create New Todo</a> 
+</div>
+
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Todo Name</th>
+      <th scope="col">Is Finished?</th>
+      <th scope="col">Date and Time</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for todo in todo_list %}
+      <tr>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.finished }}</td>
+        <td>{{ todo.date }}</td>
+        <td></td>
+        <td></td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+
+<h1>
+This site for {{name}}
+</h1>
+{% endblock jumbotron %}
